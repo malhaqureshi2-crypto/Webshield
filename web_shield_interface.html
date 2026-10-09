@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Shield Security Assessment Report Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1e293b;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        nav a.active, nav a:hover {
+            background-color: #334155;
+            color: #f8fafc;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        h1 {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #f1f5f9;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            color: #f8fafc;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #38bdf8;
+        }
+        .btn {
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: #0369a1;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #64748b;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🛡️ Web Shield</div>
+        <nav>
+            <a href="#">Overview</a>
+            <a href="#">Scanner</a>
+            <a href="#">Scan Results</a>
+            <a href="#">Findings</a>
+            <a href="#" class="active">Report Generator</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h1>Create Security Assessment Report</h1>
+            <form onsubmit="event.preventDefault(); alert('Report generation started!');">
+                <div class="form-group">
+                    <label for="student-name">Student Name</label>
+                    <input type="text" id="student-name" placeholder="Enter student name">
+                </div>
+                <div class="form-group">
+                    <label for="course-name">Course Name / Lab Assignment</label>
+                    <input type="text" id="course-name" placeholder="e.g., Ethical Hacking Lab 5">
+                </div>
+                <div class="form-group">
+                    <label for="target-url">Target URL / IP Address</label>
+                    <input type="text" id="target-url" placeholder="https://example.com">
+                </div>
+                <div class="form-group">
+                    <label for="risk-level">Overall Risk Level</label>
+                    <select id="risk-level">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                        <option value="critical">Critical</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="summary">Executive Summary</label>
+                    <textarea id="summary" rows="4" placeholder="Briefly describe the findings..."></textarea>
+                </div>
+                <button type="submit" class="btn">Generate PDF Report</button>
+            </form>
+        </div>
+        <footer>
+            &copy; 2026 Web Shield Security Dashboard
+        </footer>
+    </div>
+
+</body>
+</html>
